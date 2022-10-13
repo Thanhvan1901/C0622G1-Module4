@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa29cf39-77f9-4744-9d1d-90a25ff94453" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/model/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/repository/IProductTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/service/IProductTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/service/impl/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/java/codegym/service/impl/ProductTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/resources/templates/customer/customer-create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../thi/src/main/resources/templates/customer/customer-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/codegym/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/codegym/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/customer-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/customer-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/customer-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/customer-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/employee/employee-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/employee/employee-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/facility-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/facility-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/facility-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/facility-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../thi/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/bai1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/bai1-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/currency/controller/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/currency/controller/CurrencyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/build/classes/java/main/controller/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/build/classes/java/main/controller/GreetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/build/libs/thuc_hanh-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/build/libs/thuc_hanh-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/java/controller/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/java/controller/GreetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/webapp/WEB-INF/views/reusult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/webapp/WEB-INF/views/a.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../~$dit_Module4 -byTien (1).docx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="2EWWfkqZdDB1mwuL2FTkyoPTsm8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\Module4\ss1\bai_tap\bai1\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\Module4\ss1\bai_tap\bai1\src\main\webapp\WEB-INF\views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : org.example : bai1-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="eb12d9ac-1720-4818-850b-1bc1ca845bae" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59256" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.example : bai1-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa29cf39-77f9-4744-9d1d-90a25ff94453" name="Changes" comment="" />
+      <created>1662711926717</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662711926717</updated>
+      <workItem from="1662711928059" duration="4308000" />
+      <workItem from="1663054925280" duration="841000" />
+      <workItem from="1665635549319" duration="1861000" />
+      <workItem from="1665643983337" duration="2785000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
