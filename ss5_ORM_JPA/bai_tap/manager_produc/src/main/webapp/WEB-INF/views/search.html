@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<h3>SEARCH PRODUCT</h3>
+<p>
+    <a th:href="@{/product}">
+        Back To List Product
+    </a>
+</p>
+<p th:if="${productSearch.isEmpty()}" style="color: tomato">
+    No Product Found
+</p>
+<table th:unless="${productSearch.isEmpty()}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Product's name </th>
+        <th>Product Price</th>
+        <th>Product Description</th>
+        <th>Producer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${productSearch}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.producer}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
