@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h3>ADD NEW BLOG</h3>
+<p>
+<a th:href="@{/}">
+    Back List Blog
+</a>
+</p>
+<div id="form">
+    <form th:action="@{/save}" th:object="${songDto}"
+    method="post" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name Song :</label>
+            <input type="text" th:field="*{nameSong}"/>
+            <p style="color: red" th:errors="*{nameSong}" th:if="${#fields.hasErrors('nameSong')}"> </p>
+        </div>
+        <div>
+            <label>Singer :</label>
+            <input type="text" th:field="*{singer}">
+            <p style="color: red" th:errors="*{singer}" th:if="${#fields.hasErrors('singer')}"> </p>
+        </div>
+        <div>
+            <label>Category :</label>
+            <input type="text" th:field="*{category}"/>
+            <p style="color: red" th:errors="*{category}" th:if="${#fields.hasErrors('category')}"> </p>
+        </div>
+        <input type="submit" value="Save"/>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
