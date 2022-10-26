@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout::head}">
+</head>
+<body>
+<h3>Blog</h3>
+<div>
+    <form action="/give">
+        <input type="number" th:placeholder="search" name="code">
+        <button type="submit">search</button>
+    </form>
+
+</div>
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<h2 th:if="${book.isEmpty()}" style="color: red">
+    No Blog List</h2>
+<table id="customers" th:unless="${book.isEmpty()}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Book Title </th>
+        <th>Amount Book</th>
+        <th>Borrow Books</th>
+        <th>Give Book</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${book}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.bookName}"></td>
+        <td th:text="${item.totalBook}"></td>
+        <td><a th:href="@{/borrow/{id}(id=${item.id})}">Borrow books</a></td>
+<!--        <td><a th:href="@{/give/{id}(id=${item.borrowed.})}">Give book back</a></td>-->
+    </tr>
+    </tbody>
+</table>
+    <div>
+        <a th:href="@{'/'(page=${book.number - 1})}" th:if="${book.hasPrevious()}">Trước</a>
+        <span th:text="${book.number + 1}"></span>/<span th:text="${book.totalPages}"></span>
+        <a th:href="@{'/'(page=${book.number + 1})}" th:if="${book.hasNext()}">Sau</a>
+    </div>
+</body>
+</html>
