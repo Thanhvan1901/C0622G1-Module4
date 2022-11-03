@@ -48,8 +48,8 @@ public class BlogService implements IBlogService{
     }
 
     @Override
-    public Page<Blog> findAllByBlogNameContaining(String name, Pageable pageable , Sort sort) {
-        return iBlogRepository.findAllByBlogNameContainingAndOrOrderByDateDesc(name,pageable , sort);
+    public Page<Blog> findAllByBlogNameContaining(String name, Pageable pageable ) {
+        return iBlogRepository.findAllByBlogNameContaining(name,pageable);
     }
 
 

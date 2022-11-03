@@ -22,5 +22,5 @@ public interface IBlogService {
 
     Page<Blog> findAll(Pageable pageable);
 
-    Page<Blog> findAllByBlogNameContaining(String name, Pageable pageable , Sort sort);
+    Page<Blog> findAllByBlogNameContaining(String name, Pageable pageable );
 }

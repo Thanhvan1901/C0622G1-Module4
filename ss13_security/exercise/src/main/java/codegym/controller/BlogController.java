@@ -29,7 +29,7 @@ public class BlogController {
     public String search(Optional<String> name, @PageableDefault(value = 3) Pageable pageable, Model model) {
         String names = name.orElse("");
         Sort sort = Sort.by("date").ascending();
-        model.addAttribute("blogList", iblogService.findAllByBlogNameContaining(names, pageable , sort));
+        model.addAttribute("blogList", iblogService.findAllByBlogNameContaining(names, pageable));
         model.addAttribute("names", names);
         return "blog/index";
     }
