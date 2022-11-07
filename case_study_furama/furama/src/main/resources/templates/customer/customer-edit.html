@@ -15,21 +15,20 @@
         <div class="col-lg-3"></div>
 
         <div style="background: #e9f2ef" class="col-lg-6 shadow-lg">
-            <form action="/customer/update"  method="post" th:object="${customerDto}">
+            <form action="/customer/update"  method="post" th:object="${customer}">
                 <div class="mb-5 mt-3 text-center fst-italic">
                     <h1>Edit Customer Form</h1>
                 </div>
 
+                <input type="hidden" th:field="*{id}"/>
                 <div class="mb-3">
                     <label for="nameCustomer" class="form-label fw-bold fst-italic">Name Customer:</label>
                     <input th:field="*{name}" type="text" class="form-control" id="nameCustomer" aria-describedby="nameError">
-                    <p style="color: red" th:errors="*{name}" th:if="${#fields.hasErrors('name')}"> </p>
                 </div>
 
                 <div class="mb-3">
                     <label for="birthDayCustomer" class="form-label fw-bold fst-italic">Birth Day:</label>
                     <input th:field="*{dateOfBirth}" type="date" class="form-control" id="birthDayCustomer" aria-describedby="dateOfBirthError">
-                    <p style="color: red" th:errors="*{dateOfBirth}" th:if="${#fields.hasErrors('dateOfBirth')}"> </p>
                 </div>
 
                 <div class="mb-3">
@@ -38,25 +37,21 @@
                         <option value="false">Nữ</option>
                         <option value="true">Nam</option>
                     </select>
-                    <p style="color: red" th:errors="*{gender}" th:if="${#fields.hasErrors('gender')}"> </p>
                 </div>
 
                 <div class="mb-3">
                     <label for="idCard" class="form-label fw-bold fst-italic">Id Card:</label>
                     <input th:field="*{idCard}" type="text" class="form-control" id="idCard" aria-describedby="idCardError">
-                    <p style="color: red" th:errors="*{idCard}" th:if="${#fields.hasErrors('idCard')}"> </p>
                 </div>
 
                 <div class="mb-3">
                     <label for="phoneCustomer" class="form-label fw-bold fst-italic">Phone:</label>
                     <input th:field="*{phoneNumber}" type="text" class="form-control" id="phoneCustomer" aria-describedby="phoneError">
-                    <p style="color: red" th:errors="*{phoneNumber}" th:if="${#fields.hasErrors('phoneNumber')}"> </p>
                 </div>
 
                 <div class="mb-3">
                     <label for="emailCustomer" class="form-label fw-bold fst-italic">Email:</label>
                     <input th:field="*{email}" type="email" class="form-control" id="emailCustomer" aria-describedby="emailError">
-                    <p style="color: red" th:errors="*{email}" th:if="${#fields.hasErrors('email')}"> </p>
                 </div>
 
                 <div class="mb-3">
@@ -67,13 +62,11 @@
                                 th:text="${customerType.name}">
                         </option>
                     </select>
-                    <p style="color: red" th:errors="*{customerType}" th:if="${#fields.hasErrors('name')}"> </p>
                 </div>
 
                 <div class="mb-3">
                     <label for="address" class="form-label fw-bold fst-italic">Address:</label>
                     <input th:field="*{address}" type="text" class="form-control" id="address" aria-describedby="addressError">
-                    <p style="color: red" th:errors="*{address}" th:if="${#fields.hasErrors('name')}"> </p>
                 </div>
 
 

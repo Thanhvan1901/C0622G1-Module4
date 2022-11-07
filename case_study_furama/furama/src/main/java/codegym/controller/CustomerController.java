@@ -25,17 +25,19 @@ public class CustomerController {
     private ICustomerTypeService iCustomerTypeService;
 
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String goCustomerList(@PageableDefault(value = 3) Pageable pageable,
                                  @RequestParam(value = "name"  , defaultValue = "") String name,
                                  @RequestParam(value = "email"  , defaultValue = "") String email,
-                                 @PathVariable int id,
+                                 @RequestParam (value = "customerType" , defaultValue = "") String customerType,
+                                 @RequestParam (value = "isDelete" , defaultValue = "0") String isDelete,
                                  Model model) {
-
-
+        model.addAttribute("customerTypeList" , this.iCustomerTypeService.findAll());
         model.addAttribute("customers",
-                this.iCustomerService.findAllByNameContaining(name , email, id, pageable));
+                this.iCustomerService.findAllByNameContaining(name,email,customerType,isDelete,pageable));
         model.addAttribute("name", name);
+        model.addAttribute("email", email);
+        model.addAttribute("customerType", customerType);
         return "customer/customer-list";
     }
 
@@ -59,7 +61,7 @@ public class CustomerController {
             redirectAttributes.addFlashAttribute("message",
                     "successfully added new");
 
-            return "redirect:/customer/";
+            return "redirect:/customer/home";
         }
 
 
@@ -67,7 +69,7 @@ public class CustomerController {
     public String goEditForm(@RequestParam int id,
                              Model model) {
 
-        Customer customer = iCustomerService.findById(id);
+        model.addAttribute("customer" , iCustomerService.findById(id));
 
         model.addAttribute("customerTypeList",
                 this.iCustomerTypeService.findAll());
@@ -76,21 +78,21 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String updateCustomer( Customer customer ,RedirectAttributes redirectAttributes , Model model) {
+    public String updateCustomer( Customer customer ,RedirectAttributes redirectAttributes) {
 
 
             this.iCustomerService.save(customer);
 
             redirectAttributes.addFlashAttribute("message",
-                    "successfully added new");
+                    "successfully update new");
 
-            return "redirect:/customer/";
+            return "redirect:/customer/home";
         }
 
     @PostMapping("/delete")
-    public String deleteCustomer(@RequestParam (value = "deleteId")int id) {
+    public String deleteCustomer(@RequestParam (value = "deleteId")int deleteId) {
 
-        this.iCustomerService.deleteById(id);
-        return "redirect:/customer/";
+        this.iCustomerService.deleteById(deleteId);
+        return "redirect:/customer/home";
     }
 }

@@ -36,13 +36,18 @@
     </div>
     <div class="row mt-2">
         <div class="col-lg-12 d-flex justify-content-center align-items-center">
-            <form action="/customer/" method="get" class="d-flex">
+            <form action="/customer/home" method="get" class="d-flex">
                 <input class="form-control me-2 fst-italic" type="search" name="name" placeholder="Search"
                        aria-label="Search">
                 <input class="form-control me-2 fst-italic" type="search" name="email" placeholder="Search"
                        aria-label="Search">
-                <input class="form-control me-2 fst-italic" type="search" name="id" placeholder="Search"
-                       aria-label="Search">
+                <select th:field="*{customerType}" name="customerType" id="customerType" class="form-select" aria-label="Default select example">
+                    <option value="" selected>Choose</option>
+                    <option th:each="customerTypeObj : ${customerTypeList}"
+                            th:value="${customerTypeObj.id}"
+                            th:text="${customerTypeObj.name}">
+                    </option>
+                </select>
                 <button class="btn btn-success" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-search" viewBox="0 0 16 16">
@@ -122,10 +127,14 @@
         <ul class="pagination justify-content-end">
             <li class="page-item">
                 <a class="page-link"
-                   th:href="@{/customer/(page=${customers.number - 1})}"
+                   th:href="@{/customer/home/(page=${customers.number}-1 , name = ${name},email=${email},customerType=${customerType})}"
                    th:if="${customers.hasPrevious()}">
                     Previous
                 </a>
+<!--                <a th:if="${customers.hasPrevious()}"-->
+<!--                   th:href="@{/customer(page=${customerPage.number}-1, name = ${name}, email = ${email}, customerTypeId = ${customerTypeId})}">-->
+<!--                    Previous-->
+<!--                </a>-->
             </li>
             <li class="page-item active" aria-current="page">
                                             <span class="page-link">
@@ -137,7 +146,7 @@
             </li>
             <li class="page-item">
                 <a class="page-link"
-                   th:href="@{/customer/(page=${customers.number + 1})}"
+                   th:href="@{/customer/home/(page=${customers.number}+1 , name = ${name},email=${email},customerType=${customerType})}"
                    th:if="${customers.hasNext()}">
                     Next
                 </a>
@@ -185,8 +194,8 @@
     </div>
 </div>
 <script>
-    function deleteCustomer(name, customerId ) {
-        document.getElementById("deleteId").value = customerId;
+    function deleteCustomer(name, deleteId ) {
+        document.getElementById("deleteId").value = deleteId;
         document.getElementById("deleteName").innerText = name;
     }
 </script>

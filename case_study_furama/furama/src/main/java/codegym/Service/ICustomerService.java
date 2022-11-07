@@ -6,11 +6,12 @@ import org.springframework.data.domain.Pageable;
 
 public interface ICustomerService {
 
-    Page<Customer> findAllByNameContaining(String name,String email, int id, Pageable pageable);
+    Page<Customer> findAllByNameContaining(String name,String email, String customerType , String isDelete, Pageable pageable);
+//    Page<Customer> findAllByNameContaining( String isDelete, Pageable pageable);
 
     void save(Customer customer);
 
     Customer findById(int id);
 
-    void deleteById(int id);
+    void deleteById(int deleteId);
 }

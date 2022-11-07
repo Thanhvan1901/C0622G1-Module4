@@ -38,7 +38,7 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customerId")
     private List<Contract> contracts ;
 
 

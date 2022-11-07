@@ -17,9 +17,13 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public Page<Customer> findAllByNameContaining(String name, String email, int id, Pageable pageable) {
-        return iCustomerRepository.findBySearch(name, email, id, pageable);
+    public Page<Customer> findAllByNameContaining(String name, String email, String customerType , String isDelete , Pageable pageable) {
+        return iCustomerRepository.findBySearch(name, email, customerType, isDelete , pageable);
     }
+//    @Override
+//    public Page<Customer> findAllByNameContaining(String isDelete , Pageable pageable) {
+//        return iCustomerRepository.findBySearch(isDelete, pageable);
+//    }
 
     @Override
     public void save(Customer customer) {
@@ -32,7 +36,7 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void deleteById(int id) {
-        this.iCustomerRepository.deleteById(id);
+    public void deleteById(int deleteId) {
+        this.iCustomerRepository.delete(deleteId);
     }
 }

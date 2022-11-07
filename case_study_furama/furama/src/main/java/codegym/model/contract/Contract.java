@@ -2,6 +2,7 @@ package codegym.model.contract;
 
 
 
+import codegym.model.customer.Customer;
 import codegym.model.employee.Employee;
 import codegym.model.facility.Facility;
 
