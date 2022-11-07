@@ -1,4 +1,4 @@
-package codegym.Repository.customer;
+package codegym.repository.customer;
 
 import codegym.model.customer.CustomerType;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,18 +1,14 @@
 package codegym.controller;
-import codegym.Service.ICustomerService;
-import codegym.Service.ICustomerTypeService;
+import codegym.service.ICustomerService;
+import codegym.service.ICustomerTypeService;
 import codegym.model.customer.Customer;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/customer")
@@ -30,11 +26,10 @@ public class CustomerController {
                                  @RequestParam(value = "name"  , defaultValue = "") String name,
                                  @RequestParam(value = "email"  , defaultValue = "") String email,
                                  @RequestParam (value = "customerType" , defaultValue = "") String customerType,
-                                 @RequestParam (value = "isDelete" , defaultValue = "0") String isDelete,
                                  Model model) {
         model.addAttribute("customerTypeList" , this.iCustomerTypeService.findAll());
         model.addAttribute("customers",
-                this.iCustomerService.findAllByNameContaining(name,email,customerType,isDelete,pageable));
+                this.iCustomerService.findAllByNameContaining(name,email,customerType,pageable));
         model.addAttribute("name", name);
         model.addAttribute("email", email);
         model.addAttribute("customerType", customerType);
@@ -65,8 +60,8 @@ public class CustomerController {
         }
 
 
-    @GetMapping("/edit")
-    public String goEditForm(@RequestParam int id,
+    @GetMapping("/edit/{id}")
+    public String goEditForm(@PathVariable int id,
                              Model model) {
 
         model.addAttribute("customer" , iCustomerService.findById(id));

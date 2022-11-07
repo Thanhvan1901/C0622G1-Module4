@@ -1,4 +1,4 @@
-package codegym.Service;
+package codegym.service;
 
 import codegym.model.customer.CustomerType;
 

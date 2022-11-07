@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>edit facility</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<nav th:replace="home :: header"></nav>
+<div th:replace="home :: menu"></div>
+
+<div class="row mt-5">
+    <div class="col-lg-3"></div>
+    <div style="background: #e9f2ef" class="col-lg-6 shadow-lg">
+        <h1 class="text-center fst-italic">Edit Facility Form</h1>
+
+        <form action="/facility/update" method="post" th:object="${fa}" class="mt-5">
+
+            <div class="mb-3" id="facilityType">
+                <div class="form-check-inline ">
+                    <b>Choice Facility Type:</b>
+                </div>
+
+                <div class="form-check form-check-inline" th:each="facilityType : ${facilityTypeList}" th:attr="onclick=|displayForm('${facilityType.id}')|">
+
+                    <input hidden id="onload" type="text" th:value="${facility.facilityType.id}">
+                    <input type="hidden" th:field="*{facilityType}" id="type">
+
+                    <div th:if="${facilityType.id == facility.facilityType.id}">
+                        <input checked class="form-check-input" type="radio" name="type" th:id="${facilityType.id}" th:value="${facilityType.name}">
+                    </div>
+
+                    <div th:unless="${facilityType.id == facility.facilityType.id}">
+                        <input class="form-check-input" type="radio" name="type" th:value="${facilityType.id}" th:id="${facilityType.name}">
+                    </div>
+
+                    <label class="form-check-label" th:for="${facilityType.name}" th:text="${facilityType.name}">Villa</label>
+                </div>
+            </div>
+
+            <input type="number" hidden th:field="${facility.id}">
+
+            <div class="mb-3">
+                <label for="name" class="form-label fst-italic fw-bold ">Name Service:</label>
+                <input th:field="*{name}"  type="text" id="name" class="form-control" >
+            </div>
+
+            <div class="mb-3">
+                <label for="area" class="form-label fst-italic fw-bold">Area:</label>
+                <input th:field="*{area}" type="number" class="form-control" id="area">
+            </div>
+
+            <div class="mb-3">
+                <label for="cost" class="form-label fst-italic fw-bold">Cost:</label>
+                <input th:field="*{cost}" type="number" class="form-control" id="cost">
+            </div>
+
+            <div class="mb-3">
+                <label for="maxPeople" class="form-label fst-italic fw-bold">Max People:</label>
+                <input th:field="*{maxPeople}" type="number" class="form-control" id="maxPeople">
+            </div>
+
+            <div class="mb-3">
+                <label for="rentType" class="form-label fst-italic fw-bold">Rent Type:</label>
+                <select th:field="*{rentType}" id="rentType" name="rentType" class="form-select" aria-label="Default select example">
+                    <option th:each="rentTypeObj : ${rentTypeList}"
+                            th:value="${rentTypeObj.id}"
+                            th:text="${rentTypeObj.name}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3" id="opt1" style="display: none">
+                <label for="roomStandard" class="form-label fst-italic fw-bold">Room Standard:</label>
+                <select th:field="*{standardRoom}" id="roomStandard" name="standard" class="form-select" aria-label="Default select example">
+                    <option value="Normal">normal</option>
+                    <option value="Vip">vip</option>
+                </select>
+            </div>
+            <div class="mb-3" id="opt2" style="display: none">
+                <label for="poolArea" class="form-label fst-italic fw-bold">Pool Area:</label>
+                <input th:field="*{poolArea}"  type="number" value="0" name="Pool" class="form-control" id="poolArea">
+            </div>
+            <div class="mb-3" id="opt3" style="display: none">
+                <label for="numberOfFloors" class="form-label fst-italic fw-bold">Number Of Floors:</label>
+                <input  th:field="*{numberOfFloors}" type="number" value="0" name="floors" class="form-control" id="numberOfFloors">
+            </div>
+            <div class="mb-3" id="opt4" style="display: none">
+                <label for="descriptionOtherConvenience" class="form-label fst-italic fw-bold">Description Other Convenience:</label>
+                <input  th:field="*{descriptionOtherConvenience}" type="text" name="convenience" class="form-control" id="descriptionOtherConvenience">
+            </div>
+
+            <div class="mb-3" id="opt5" style="display: none">
+                <label for="freeServiceIncluded" class="form-label fst-italic fw-bold">Free Service Included:</label>
+                <input  th:field="*{facilityFree}" type="text" name="free" class="form-control" id="freeServiceIncluded">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary mb-3 w-100">Update</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<script>
+    let code = document.getElementById("onload").value;
+    window.onload = displayForm(code);
+
+    function displayForm(value) {
+
+        document.getElementById("type").value = value;
+
+        switch (value) {
+            case "1":
+                document.getElementById("opt1").style.display = "block";
+                document.getElementById("opt2").style.display = "block";
+                document.getElementById("opt3").style.display = "block";
+                document.getElementById("opt4").style.display = "block";
+                document.getElementById("opt5").style.display = "none";
+                break;
+            case "2":
+                document.getElementById("opt1").style.display = "block";
+                document.getElementById("opt2").style.display = "none";
+                document.getElementById("opt3").style.display = "block";
+                document.getElementById("opt4").style.display = "block";
+                document.getElementById("opt5").style.display = "none";
+                break;
+            case "3":
+                document.getElementById("opt1").style.display = "none";
+                document.getElementById("opt2").style.display = "none";
+                document.getElementById("opt3").style.display = "none";
+                document.getElementById("opt4").style.display = "none";
+                document.getElementById("opt5").style.display = "block";
+                break;
+        }
+    }
+</script>
+
+
+<div th:replace="home :: footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

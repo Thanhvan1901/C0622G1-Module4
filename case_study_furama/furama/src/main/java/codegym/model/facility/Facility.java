@@ -41,6 +41,8 @@ public class Facility {
     @Column(name = "facility_free")
     private String facilityFree;
 
+    private boolean is_delete;
+
     @ManyToOne
     @JoinColumn(name = "rent_type_id", referencedColumnName = "id")
     private RentType rentType;
@@ -55,7 +57,7 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(int id, String name, String area, String cost, String maxPeople, String standard, String otherConvenience, String poolArea, String floors, String facilityFree, RentType rentType, FacilityType facilityType, List<Contract> contracts) {
+    public Facility(int id, String name, String area, String cost, String maxPeople, String standard, String otherConvenience, String poolArea, String floors, boolean is_delete, String facilityFree, RentType rentType, FacilityType facilityType, List<Contract> contracts) {
         this.id = id;
         this.name = name;
         this.area = area;
@@ -65,6 +67,7 @@ public class Facility {
         this.otherConvenience = otherConvenience;
         this.poolArea = poolArea;
         this.floors = floors;
+        this.is_delete = is_delete;
         this.facilityFree = facilityFree;
         this.rentType = rentType;
         this.facilityType = facilityType;
@@ -173,5 +176,13 @@ public class Facility {
 
     public void setContracts(List<Contract> contracts) {
         this.contracts = contracts;
+    }
+
+    public boolean isIs_delete() {
+        return is_delete;
+    }
+
+    public void setIs_delete(boolean is_delete) {
+        this.is_delete = is_delete;
     }
 }
