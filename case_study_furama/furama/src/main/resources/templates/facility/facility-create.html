@@ -75,9 +75,10 @@
                 <label for="poolArea" class="form-label fst-italic fw-bold">Pool Area:</label>
                 <input th:field="*{poolArea}"  type="number" value="0" name="Pool" class="form-control" id="poolArea" aria-describedby="poolError">
             </div>
+
             <div class="mb-3" id="opt3" style="display: none">
                 <label for="floors" class="form-label fst-italic fw-bold">Number Of Floors:</label>
-                <input  th:field="*{floors}" type="number" value="0" name="floors" class="form-control" id="floors" aria-describedby="floorError">
+                <input th:field="*{floors}"  type="number" value="0" name="Floors" class="form-control" id="floors" aria-describedby="floorsError">
             </div>
             <div class="mb-3" id="opt4" style="display: none">
                 <label for="otherConvenience" class="form-label fst-italic fw-bold">Description Other Convenience:</label>
@@ -124,11 +125,11 @@
                 document.getElementById("opt5").style.display = "none";
                 break;
             default:
-                document.getElementById("opt1").style.display = "block";
-                document.getElementById("opt2").style.display = "block";
-                document.getElementById("opt3").style.display = "block";
-                document.getElementById("opt4").style.display = "block";
-                document.getElementById("opt5").style.display = "block";
+                document.getElementById("opt1").style.display = "none";
+                document.getElementById("opt2").style.display = "none";
+                document.getElementById("opt3").style.display = "none";
+                document.getElementById("opt4").style.display = "none";
+                document.getElementById("opt5").style.display = "none";
 
         }
     }

@@ -18,6 +18,6 @@ public interface IFacilityRepository extends JpaRepository<Facility,Integer> {
     Page<Facility> findBySearch(@Param("name") String name , @Param("facilityType") String facilityType , Pageable pageable);
 
     @Modifying
-    @Query(value = "update from facility set is_delete = 1 where id =:id", nativeQuery = true)
-    void deleteById(int id);
+    @Query(value = "update facility set is_delete = 1 where id =:id", nativeQuery = true)
+    void deleteById(@Param("id") int id);
 }

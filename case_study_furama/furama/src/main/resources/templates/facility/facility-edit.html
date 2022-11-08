@@ -15,7 +15,7 @@
     <div style="background: #e9f2ef" class="col-lg-6 shadow-lg">
         <h1 class="text-center fst-italic">Edit Facility Form</h1>
 
-        <form action="/facility/update" method="post" th:object="${fa}" class="mt-5">
+        <form action="/facility/update" method="post" th:object="${facility}" class="mt-5">
 
             <div class="mb-3" id="facilityType">
                 <div class="form-check-inline ">
@@ -72,8 +72,8 @@
             </div>
 
             <div class="mb-3" id="opt1" style="display: none">
-                <label for="roomStandard" class="form-label fst-italic fw-bold">Room Standard:</label>
-                <select th:field="*{standardRoom}" id="roomStandard" name="standard" class="form-select" aria-label="Default select example">
+                <label for="standard" class="form-label fst-italic fw-bold">Room Standard:</label>
+                <select th:field="*{standard}" id="standard" name="standard" class="form-select" aria-label="Default select example">
                     <option value="Normal">normal</option>
                     <option value="Vip">vip</option>
                 </select>
@@ -84,11 +84,11 @@
             </div>
             <div class="mb-3" id="opt3" style="display: none">
                 <label for="numberOfFloors" class="form-label fst-italic fw-bold">Number Of Floors:</label>
-                <input  th:field="*{numberOfFloors}" type="number" value="0" name="floors" class="form-control" id="numberOfFloors">
+                <input  th:field="*{floors}" type="number" value="0" name="floors" class="form-control" id="numberOfFloors">
             </div>
             <div class="mb-3" id="opt4" style="display: none">
                 <label for="descriptionOtherConvenience" class="form-label fst-italic fw-bold">Description Other Convenience:</label>
-                <input  th:field="*{descriptionOtherConvenience}" type="text" name="convenience" class="form-control" id="descriptionOtherConvenience">
+                <input  th:field="*{otherConvenience}" type="text" name="convenience" class="form-control" id="descriptionOtherConvenience">
             </div>
 
             <div class="mb-3" id="opt5" style="display: none">

@@ -32,10 +32,10 @@ public class Facility {
     @Column(name = "description_other_convenience")
     private String otherConvenience;
 
-    @Column(name = "pool_area", columnDefinition = "double")
+    @Column(name = "pool_area")
     private String poolArea;
 
-    @Column(name = "number_of_floor", columnDefinition = "int")
+    @Column(name = "number_of_floor")
     private String floors;
 
     @Column(name = "facility_free")
