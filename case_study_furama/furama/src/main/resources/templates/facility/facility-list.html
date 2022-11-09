@@ -40,10 +40,10 @@
         <div class="col-lg-12 d-flex justify-content-center align-items-center">
             <form action="/facility/list" method="get" class="d-flex">
                 <input class="form-control me-2 fst-italic" type="search" name="name" placeholder="Search" aria-label="Search">
-                <select th:field="*{facilityType}" name="customerType" id="facilityType" class="form-select" aria-label="Default select example">
+                <select  name="facilityType" id="facilityType" class="form-select" aria-label="Default select example">
                     <option value="" selected>Choose</option>
                     <option th:each="item : ${facilityTypeList}"
-                            th:value="${item.id}"
+                            th:value="${item.name}"
                             th:text="${item.name}">
                     </option>
                 </select>
@@ -120,7 +120,7 @@
     <ul class="pagination justify-content-end">
         <li class="page-item">
             <a class="page-link"
-               th:href="@{/facility/list/(page=${facilityList.number - 1})}"
+               th:href="@{/facility/list/(page=${facilityList.number - 1}, name = ${name}, facilityType=${facilityType})}"
                th:if="${facilityList.hasPrevious()}">
                 Previous
             </a>
@@ -135,7 +135,7 @@
         </li>
         <li class="page-item">
             <a class="page-link"
-               th:href="@{/facility/list/(page=${facilityList.number + 1})}"
+               th:href="@{/facility/list/(page=${facilityList.number + 1}, name = ${name}, facilityType=${facilityType})}"
                th:if="${facilityList.hasNext()}">
                 Next
             </a>
