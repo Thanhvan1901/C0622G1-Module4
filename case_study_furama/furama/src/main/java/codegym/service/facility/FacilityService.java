@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FacilityService implements IFacilityService {
     @Autowired
@@ -30,5 +32,10 @@ public class FacilityService implements IFacilityService {
     @Override
     public void deleteId(int id) {
         iFacilityRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Facility> findAll() {
+        return iFacilityRepository.findAll();
     }
 }

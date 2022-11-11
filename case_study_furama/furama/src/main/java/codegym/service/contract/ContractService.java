@@ -18,11 +18,6 @@ public class ContractService implements IContractService {
     private IContractRepository iContractRepository;
 
     @Override
-    public List<IContractDto> findAllDto() {
-        return iContractRepository.findAllDto();
-    }
-
-    @Override
     public Page<IContractDto> findAllDto(Pageable pageable) {
         return iContractRepository.findAllDto(pageable);
     }
@@ -32,8 +27,5 @@ public class ContractService implements IContractService {
         iContractRepository.save(contract);
     }
 
-    @Override
-    public List<Contract> findAll() {
-        return iContractRepository.findAll();
-    }
+
 }

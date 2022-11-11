@@ -61,7 +61,6 @@
                             th:text="${rentTypeObj.name}">
                     </option>
                 </select>
-                <span th:errors="*{maxPeople}" id="Default select example" class="form-text text-danger"></span>
             </div>
 
             <div class="mb-3" id="opt1" style="display: none">
@@ -74,21 +73,24 @@
             <div class="mb-3" id="opt2" style="display: none">
                 <label for="poolArea" class="form-label fst-italic fw-bold">Pool Area:</label>
                 <input th:field="*{poolArea}"  type="number" value="0" name="Pool" class="form-control" id="poolArea" aria-describedby="poolError">
+                <span th:errors="*{poolArea}" id="poolError" class="form-text text-danger"></span>
             </div>
 
             <div class="mb-3" id="opt3" style="display: none">
                 <label for="floors" class="form-label fst-italic fw-bold">Number Of Floors:</label>
                 <input th:field="*{floors}"  type="number" value="0" name="Floors" class="form-control" id="floors" aria-describedby="floorsError">
+                <span th:errors="*{floors}" id="floorsError" class="form-text text-danger"></span>
             </div>
             <div class="mb-3" id="opt4" style="display: none">
                 <label for="otherConvenience" class="form-label fst-italic fw-bold">Description Other Convenience:</label>
                 <input  th:field="*{otherConvenience}" type="text" name="otherConvenience" class="form-control" id="otherConvenience">
             </div>
 
-            <div class="mb-3" id="opt5" style="display: none">
-                <label for="freeServiceIncluded" class="form-label fst-italic fw-bold">Free Service Included:</label>
-                <input  th:field="*{facilityFree}" type="text" name="convenience" class="form-control" id="freeServiceIncluded">
-            </div>
+<!--            <div class="mb-3" id="opt5" style="display: none">-->
+<!--                <label for="freeServiceIncluded" class="form-label fst-italic fw-bold">Free Service Included:</label>-->
+<!--                <input  th:field="*{facilityFree}" type="text" name="convenience" class="form-control" id="freeServiceIncluded">-->
+<!--                <p style="color: red" th:errors="*{facilityFree}" th:if="${#fields.hasErrors('facilityFree')}"> </p>-->
+<!--            </div>-->
             <div>
                 <button type="submit" class="btn btn-primary mb-3 w-100">Add</button>
             </div>

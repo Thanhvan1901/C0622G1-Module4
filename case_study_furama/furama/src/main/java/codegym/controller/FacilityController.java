@@ -58,20 +58,22 @@ public class FacilityController {
             if (bindingResult.hasFieldErrors()){
                 model.addAttribute("facilityTypeList",
                         this.iFacilityTypeService.findAll());
-
                 model.addAttribute("rentTypeList",
                         this.iRentFacilityService.findAll());
-
                 return "facility/facility-create";
             }
 //            House
         } else if(facilityDto.getFacilityType().getId()== 2){
+            new FacilityDto().validate(facilityDto, bindingResult);
             if (bindingResult.hasFieldErrors("facilityType")
                     ||bindingResult.hasFieldErrors("name")
                     || bindingResult.hasFieldErrors("area")
                     || bindingResult.hasFieldErrors("cost")
                     || bindingResult.hasFieldErrors("maxPeople")
-                    || bindingResult.hasFieldErrors("rentType")){
+                    || bindingResult.hasFieldErrors("rentType")
+                    || bindingResult.hasFieldErrors("standardRoom")
+                    || bindingResult.hasFieldErrors("floors")
+                    || bindingResult.hasFieldErrors("otherConvenience")){
                 model.addAttribute("facilityTypeList",
                         this.iFacilityTypeService.findAll());
 

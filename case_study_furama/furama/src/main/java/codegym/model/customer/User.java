@@ -8,13 +8,19 @@ import java.util.Set;
 @Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String username;
+
     private String password;
 
     @OneToOne(mappedBy = "user")
     private Employee employee;
 
-    @ManyToMany
+    private boolean isEnabled;
+
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role" , joinColumns = @JoinColumn(name = "username") ,
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
@@ -52,5 +58,21 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 }

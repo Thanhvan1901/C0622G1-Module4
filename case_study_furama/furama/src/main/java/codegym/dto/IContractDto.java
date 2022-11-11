@@ -5,8 +5,9 @@ public interface IContractDto {
     String getStartDate();
     String getEndDate();
     String getDeposit();
-    String getTotalMoney();
+    String getFacilityName();
     String getEmployeeName();
     String getCustomerName();
-    String getFacilityName();
+    String getTotalMoney();
+
 }

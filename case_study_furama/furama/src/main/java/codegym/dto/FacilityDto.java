@@ -21,7 +21,7 @@ public class FacilityDto implements Validator {
             message = "Phải viết hoa chữ cái của mỗi từ!")
     private String name;
 
-    @NotBlank(message = "Mày Bị Ngu à , không được để trống :)))))))))))))))))")
+    @NotBlank(message = "Mày Bị Ngu à ")
     @Min(1)
     private String area;
 
@@ -29,7 +29,7 @@ public class FacilityDto implements Validator {
     @Min(1)
     private String cost;
 
-    @NotBlank(message = "Không được để trống , ngu vừa thôi ;))))))))))))")
+    @NotBlank(message = "Không được để trống")
     @Min(1)
     private String maxPeople;
 
