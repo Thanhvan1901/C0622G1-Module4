@@ -177,34 +177,62 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="nameFacility" class="form-label fw-bold fst-italic">Service Name:</label>
-                            <input type="text" class="form-control" id="nameFacility" aria-describedby="nameError">
-                        </div>
-                        <div class="mb-3">
-                            <label for="nameCustomer" class="form-label fw-bold fst-italic">Customer Name:</label>
-                            <input type="text" class="form-control" id="nameCustomer" aria-describedby="nameError">
-                        </div>
-                        <div class="mb-3">
-                            <label for="nameEmployee" class="form-label fw-bold fst-italic">Employee Name:</label>
-                            <input type="text" class="form-control" id="nameEmployee" aria-describedby="nameError">
-                        </div>
+                        <form th:action="@{/contract/save}" method="post" th:object="${contract}">
+                        <table class="table table-light table-striped table-bordered">
+                            <tr class="table-dark text-light">
+                                <td>Contract start date:</td>
+                                <td>
+                                    <input type="date" th:field="*{startDate}" />
+                                    <p style="color: aqua"
+                                       th:errors="*{startDate}"
+                                       th:if="${#fields.hasErrors('startDate')}">
+                                    </p>
+                                </td>
+                            </tr>
 
-                        <div class="mb-3">
-                            <label for="startDate" class="form-label fw-bold fst-italic">Start Date</label>
-                            <input type="date" class="form-control" id="startDate" aria-describedby="dateOfBirthError">
-                        </div>
+                            <tr class="table-dark text-light">
+                                <td>Contract end date:</td>
+                                <td>
+                                    <input type="date" th:field="*{endDate}" />
+                                    <p style="color: aqua"
+                                       th:errors="*{endDate}"
+                                       th:if="${#fields.hasErrors('endDate')}">
+                                    </p>
+                                </td>
+                            </tr>
 
+                            <tr class="table-dark text-light">
+                                <td>Contract Deposit:</td>
+                                <td>
+                                    <input type="number" th:field="*{deposit}" />
+                                    <p style="color: aqua"
+                                       th:errors="*{deposit}"
+                                       th:if="${#fields.hasErrors('deposit')}">
+                                    </p>
+                                </td>
+                            </tr>
 
-                        <div class="mb-3">
-                            <label for="endDate" class="form-label fw-bold fst-italic">End Date:</label>
-                            <input type="date" class="form-control" id="endDate" aria-describedby="idCardError">
-                        </div>
+                            <tr>
+                                <td>Facility :</td>
+                                <td>
+                                    <select th:field="*{facility}">
+                                        <option th:each="item:${facilityList}" th:value="${item.facilityId}" th:text="${item.facilityName}"></option>
+                                    </select>
+                                </td>
+                            </tr>
 
-                        <div class="mb-3">
-                            <label for="deposit" class="form-label fw-bold fst-italic">Deposit:</label>
-                            <input type="number" class="form-control" id="deposit" aria-describedby="idCardError">
-                        </div>
+                            <tr>
+                                <td>Customer:</td>
+                                <td>
+                                    <select th:field="*{customer}">
+                                        <option th:each="item:${customerList}" th:value="${item.customerId}" th:text="${item.customerName}"></option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <button type="submit">Save</button>
+        </form>
                     </div>
                 </div>
                 <div class="modal-footer">
